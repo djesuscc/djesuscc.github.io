@@ -1,0 +1,71 @@
+body, #root {
+    height: 100vh;
+}
+
+body {
+    background: darkgray url('/public/imgs/empty-result.png') no-repeat right top fixed;
+}
+
+.logo {
+    width: 500px;
+}
+
+.flip-card-container {
+    perspective: 1000px;
+    height: 400px;
+}
+
+.card-container {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 1000ms;
+    cursor: pointer;
+}
+
+.card-container.flip{
+    transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    backface-visibility: hidden;
+}
+
+.card-back {
+    transform: rotateY(180deg);
+    background: url('/public/imgs/vortice.jpeg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.content-box {
+    display: flex;
+    width: 100%;
+}
+
+.box {
+    flex: 1;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    padding: 10px;
+}
+
+.box small {
+    font-size:8px ;
+}
+
+@media only screen and (max-width: 600px) {
+    .logo {
+        width: 300px;
+    }
+}
